@@ -106,7 +106,7 @@ HOME = f'''
     </div>
     <div class="ed-home-portraits">
       <figure class="ed-portrait ed-portrait-fer">{imagem('/img/hero-fernanda.jpg', 'Mrs Master Cavenatti praticando Taekwondo em área externa', carregamento='eager')}<figcaption>Mrs Master <span>Atleta · educadora · cofundadora</span></figcaption></figure>
-      <figure class="ed-portrait ed-portrait-mas">{imagem('/imersao/master-retrato.jpg', 'Master Cavenatti diante do símbolo da Kihap', carregamento='eager')}<figcaption>Master <span>Mestre · educador · cofundador</span></figcaption></figure>
+      <figure class="ed-portrait ed-portrait-mas">{imagem('/img/master_cavenatti.jpeg', 'Master Cavenatti com uniforme de Taekwondo', carregamento='eager')}<figcaption>Master <span>Mestre · educador · cofundador</span></figcaption></figure>
     </div>
   </div>
   <div class="ed-home-hero-bottom in"><span>Esporte</span><span>Educação</span><span>Família</span><span>Liderança</span></div>
@@ -246,8 +246,8 @@ FUNDADORES = {
     },
     "master": {
         "nome": "Master Cavenatti", "titulo": "Master", "classe": "ed-mas", "cor": "Petróleo",
-        "sobretitulo": "Artes marciais · educação · liderança", "hero_img": "/imersao/master-retrato.jpg",
-        "hero_alt": "Master Cavenatti diante do símbolo da Kihap",
+        "sobretitulo": "Artes marciais · educação · liderança", "hero_img": "/img/master_cavenatti.jpeg",
+        "hero_alt": "Master Cavenatti com uniforme de Taekwondo",
         "linha": "Mestre, educador e cofundador. Uma trajetória de liderança construída com disciplina e constância.",
         "hero_texto": "Participou por dez anos da equipe do Brasil em torneios internacionais de Taekwondo. Reconhecido Mestre nos EUA em 2018, conquistou o segundo mestrado nos EUA em 2024. Em programas e palestras, leva a disciplina do treinamento para a vida real.",
         "sobre_titulo": "Quem ele é, além do tatame.",
