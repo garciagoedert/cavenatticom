@@ -1,0 +1,30 @@
+/* Gerado a partir de tokens.json do design system Cavenatti (v2). Não editar à mão. */
+:root, :root[data-theme="claro"] {
+  --papel:#f4f3f0; --papel-elevado:#ffffff; --papel-recuo:#e9e7e2;
+  --tinta:#1a1918; --tinta-suave:#57534e; --tinta-discreta:#6e6a64;
+  --linha:#d9d6d0; --linha-forte:#8e8982;
+  --kihap-grafite:#303030; --kihap-ouro:#dea129; --ouro-texto:#7e5a12;
+  --fernanda:#a0451f; --fernanda-tinta:#f5e1d6; --sobre-fernanda:#ffffff;
+  --master:#1f4a5a; --master-tinta:#d8e6ea; --sobre-master:#ffffff;
+  --faixa-preta:#0f0f0f; --foco:#1f4a5a; --erro:#a3281f; --sucesso:#2f6b3a;
+  --sombra-sobreposta:0 12px 32px rgba(26,25,24,.14);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="claro"]) {
+    --papel:#161514; --papel-elevado:#201f1d; --papel-recuo:#0f0e0d;
+    --tinta:#f2f0ec; --tinta-suave:#bab5ae; --tinta-discreta:#9c978f;
+    --linha:#34322f; --linha-forte:#6f6a63; --ouro-texto:#dea129;
+    --fernanda:#e8916a; --fernanda-tinta:#3a2219; --sobre-fernanda:#161514;
+    --master:#86bacb; --master-tinta:#182c33; --sobre-master:#161514;
+    --foco:#dea129; --erro:#f08c80; --sucesso:#8bc79a;
+    --sombra-sobreposta:0 12px 32px rgba(0,0,0,.5);
+  }
+}
+:root {
+  --font-display: Archivo, "Arial Narrow", Helvetica, sans-serif;
+  --font-texto: "Source Serif 4", Georgia, "Times New Roman", serif;
+  --espaco-1:4px; --espaco-2:8px; --espaco-3:12px; --espaco-4:16px; --espaco-5:24px;
+  --espaco-6:32px; --espaco-7:48px; --espaco-8:64px; --espaco-9:96px; --espaco-10:128px;
+  --container:1200px; --medida-texto:68ch; --faixa-altura:8px; --fio:1px; --fio-forte:2px;
+  --raio-0:0; --raio-1:2px; --raio-circulo:50%;
+}

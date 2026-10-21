@@ -1,0 +1,61 @@
+
+/* Cavenatti: componentes em CSS puro. Tokens vêm de tokens.css. */
+.cv { font-family: var(--font-texto); color: var(--tinta); background: var(--papel); -webkit-font-smoothing: antialiased; }
+.cv *, .cv *::before, .cv *::after { box-sizing: border-box; }
+
+/* Escopo de fundador: troca a cor de destaque */
+.cv-fernanda { --acento: var(--fernanda); --acento-tinta: var(--fernanda-tinta); --sobre-acento: var(--sobre-fernanda); }
+.cv-master   { --acento: var(--master);   --acento-tinta: var(--master-tinta);   --sobre-acento: var(--sobre-master); }
+.cv-dupla    { --acento: var(--tinta);    --acento-tinta: var(--papel-recuo);    --sobre-acento: var(--papel); }
+.cv-mfp      { --acento: var(--kihap-ouro); --acento-tinta: var(--faixa-preta);  --sobre-acento: var(--faixa-preta); }
+
+/* Tipografia */
+.cv-display { font-family: var(--font-display); font-weight: 800; font-stretch: 115%; letter-spacing: -0.01em; line-height: .92; text-wrap: balance; margin: 0; }
+.cv-titulo  { font-family: var(--font-display); font-weight: 700; line-height: 1.12; text-wrap: balance; margin: 0; }
+.cv-sobre   { font-family: var(--font-display); font-size: 12px; font-weight: 600; letter-spacing: .24em; text-transform: uppercase; line-height: 1.2; color: var(--tinta-suave); margin: 0; }
+.cv-texto   { font-family: var(--font-texto); font-size: 17px; line-height: 1.65; max-width: 68ch; color: var(--tinta-suave); margin: 0; }
+.cv-legenda { font-family: var(--font-display); font-size: 13px; line-height: 1.45; color: var(--tinta-discreta); margin: 0; }
+
+/* Faixa, o dispositivo assinatura */
+.cv-faixa { display: block; height: var(--faixa-altura); width: 96px; background: var(--acento, var(--kihap-ouro)); border: 0; margin: 0; }
+.cv-faixa.longa { width: 100%; }
+.cv-faixa.dupla { background: linear-gradient(90deg, var(--fernanda) 0 50%, var(--master) 50% 100%); }
+.cv-faixa.kihap { background: var(--kihap-ouro); }
+
+/* Botões */
+.cv-btn { display: inline-flex; align-items: center; gap: 10px; min-height: 48px; padding: 0 22px; border-radius: var(--raio-1); border: 1px solid transparent; font-family: var(--font-display); font-size: 15px; font-weight: 600; line-height: 1; text-decoration: none; cursor: pointer; transition: background-color .2s cubic-bezier(.2,.6,.2,1), color .2s; }
+.cv-btn:focus-visible, .cv-link:focus-visible, .cv-campo input:focus-visible, .cv-campo select:focus-visible, .cv-campo textarea:focus-visible { outline: 2px solid var(--foco); outline-offset: 2px; }
+.cv-btn.primario { background: var(--tinta); color: var(--papel); }
+.cv-btn.primario:hover { background: var(--tinta-suave); }
+.cv-btn.acento { background: var(--acento); color: var(--sobre-acento); }
+.cv-btn.acento:hover { filter: brightness(.9); }
+.cv-btn.secundario { background: transparent; color: var(--tinta); border-color: var(--linha-forte); }
+.cv-btn.secundario:hover { background: var(--papel-recuo); }
+.cv-btn[disabled] { background: var(--papel-recuo); color: var(--tinta-discreta); border-color: var(--linha); cursor: not-allowed; filter: none; }
+.cv-link { font-family: var(--font-display); font-weight: 600; font-size: 15px; color: var(--acento, var(--tinta)); text-decoration: none; border-bottom: 2px solid transparent; padding-bottom: 2px; }
+.cv-link:hover { border-bottom-color: currentColor; }
+
+/* Citação */
+.cv-citacao { margin: 0; padding-left: 24px; border-left: 2px solid var(--acento); max-width: 34ch; }
+.cv-citacao > p { font-family: var(--font-texto); font-style: italic; font-size: 30px; line-height: 1.3; color: var(--tinta); margin: 0; }
+.cv-citacao footer { margin-top: 16px; }
+
+/* Provas numéricas */
+.cv-provas { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 24px; }
+.cv-prova { border-top: 1px solid var(--linha); padding-top: 16px; }
+.cv-prova b { display: block; font-family: var(--font-display); font-weight: 800; font-stretch: 115%; font-size: 56px; line-height: 1; color: var(--acento, var(--tinta)); font-variant-numeric: tabular-nums; }
+.cv-prova span { display: block; margin-top: 8px; font-family: var(--font-display); font-size: 14px; line-height: 1.35; color: var(--tinta-suave); }
+
+/* Cartões */
+.cv-cartao { background: var(--papel-elevado); border: 1px solid var(--linha); border-radius: var(--raio-0); }
+.cv-foto { background: repeating-linear-gradient(135deg, var(--papel-recuo) 0 12px, var(--papel) 12px 24px); display: flex; align-items: flex-end; padding: 16px; color: var(--tinta-discreta); font-family: var(--font-display); font-size: 12px; letter-spacing: .12em; text-transform: uppercase; }
+
+/* Formulário */
+.cv-campo { display: grid; gap: 8px; }
+.cv-campo label { font-family: var(--font-display); font-size: 14px; font-weight: 600; color: var(--tinta); }
+.cv-campo input, .cv-campo select, .cv-campo textarea { width: 100%; min-height: 48px; padding: 12px 14px; border: 1px solid var(--linha-forte); border-radius: var(--raio-1); background: var(--papel-elevado); color: var(--tinta); font-family: var(--font-display); font-size: 16px; }
+.cv-campo .ajuda { font-family: var(--font-display); font-size: 13px; color: var(--tinta-discreta); }
+.cv-campo.erro input { border-color: var(--erro); }
+.cv-campo.erro .ajuda { color: var(--erro); }
+
+@media (prefers-reduced-motion: reduce) { .cv * { transition: none !important; } }

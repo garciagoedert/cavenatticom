@@ -1,0 +1,128 @@
+/* Layout do site cavenatti.com. Componentes em componentes.css, tokens em tokens.css. */
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--papel); }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+.in { width: min(var(--container), 100% - 2 * var(--espaco-4)); margin-inline: auto; }
+@media (min-width: 900px) { .in { width: min(var(--container), 100% - 128px); } }
+.pulo { position: absolute; left: -9999px; }
+.pulo:focus { left: 16px; top: 16px; z-index: 10; background: var(--papel-elevado); padding: 12px 16px; outline: 2px solid var(--foco); }
+section[id] { scroll-margin-top: 24px; }
+
+/* Cabeçalho */
+.topo { border-bottom: 1px solid var(--linha); }
+.topo .in { display: flex; justify-content: space-between; align-items: center; padding-block: 20px; gap: 16px; }
+.wmb { display: grid; gap: 4px; text-decoration: none; color: var(--tinta); }
+.wmb .pre { font-family: var(--font-display); font-weight: 600; font-size: 11px; letter-spacing: .32em; text-transform: uppercase; color: var(--tinta); }
+.wmb .wm { font-family: var(--font-display); font-weight: 800; font-stretch: 125%; font-size: 24px; letter-spacing: .06em; line-height: 1; }
+.nav { display: flex; gap: 24px; }
+.nav a { white-space: nowrap; font-family: var(--font-display); font-weight: 600; font-size: 15px; color: var(--tinta); text-decoration: none; padding: 12px 0; border-bottom: 2px solid transparent; }
+.nav a:hover, .nav a[aria-current="page"] { border-bottom-color: var(--tinta); }
+.menu-btn { display: none; min-height: 44px; min-width: 44px; background: transparent; border: 1px solid var(--linha-forte); border-radius: var(--raio-1); color: var(--tinta); font-family: var(--font-display); font-weight: 600; font-size: 15px; padding: 0 14px; cursor: pointer; }
+.menu-btn:focus-visible, .nav a:focus-visible, .wmb:focus-visible, a:focus-visible { outline: 2px solid var(--foco); outline-offset: 2px; }
+@media (max-width: 1040px) {
+  .menu-btn { display: inline-block; }
+  .nav { display: none; position: absolute; left: 0; right: 0; top: 100%; flex-direction: column; gap: 0; background: var(--papel-elevado); border-bottom: 1px solid var(--linha); padding: 8px 16px; z-index: 5; }
+  .nav.aberto { display: flex; }
+  .topo { position: relative; }
+  .nav a { padding: 14px 0; border-bottom: 1px solid var(--linha); }
+}
+
+/* Seções */
+.sec { padding-block: var(--espaco-8); }
+@media (min-width: 900px) { .sec { padding-block: var(--espaco-9); } }
+.sec.recuo { background: var(--papel-recuo); }
+.cab-sec { display: grid; gap: var(--espaco-2); margin-bottom: var(--espaco-6); }
+.cab-sec .cv-faixa { margin-bottom: var(--espaco-3); }
+.cab-sec h2 { font-size: clamp(30px, 4.4vw, 40px); }
+.cv-texto.l { font-size: 21px; line-height: 1.55; color: var(--tinta); }
+.pilha { display: grid; gap: var(--espaco-5); align-content: start; }
+.cols { display: grid; gap: var(--espaco-7); }
+@media (min-width: 900px) { .cols { grid-template-columns: 5fr 7fr; gap: var(--espaco-8); } }
+
+/* Abertura da home */
+.abertura { padding-block: var(--espaco-8) var(--espaco-7); display: grid; gap: var(--espaco-4); }
+.abertura h1 { font-size: clamp(44px, 8vw, 88px); max-width: 14ch; margin-top: var(--espaco-2); }
+.abertura .cv-texto { font-size: 21px; line-height: 1.55; max-width: 60ch; }
+
+/* Cartão de fundador */
+.duo { display: grid; gap: var(--espaco-5); }
+@media (min-width: 800px) { .duo { grid-template-columns: 1fr 1fr; } }
+.cf { display: grid; }
+.cf .fi { aspect-ratio: 4/5; }
+.cf .corpo { display: grid; gap: 10px; padding: var(--espaco-5) var(--espaco-5) var(--espaco-6); align-content: start; }
+.assin-n { font-family: var(--font-display); font-weight: 800; font-stretch: 115%; font-size: 44px; line-height: .9; color: var(--acento); margin: 0; }
+.assin-pre { font-family: var(--font-display); font-weight: 600; font-size: 13px; letter-spacing: .32em; text-transform: uppercase; color: var(--tinta); margin: 0; }
+.assin-sob { font-family: var(--font-display); font-weight: 600; font-size: 13px; letter-spacing: .32em; text-transform: uppercase; color: var(--tinta); margin: 0; }
+.cf .cv-faixa { width: 100%; }
+
+/* Abertura das páginas de fundador */
+.fund { padding-block: var(--espaco-8); display: grid; gap: var(--espaco-7); align-items: center; }
+@media (min-width: 900px) { .fund { grid-template-columns: 7fr 5fr; padding-block: var(--espaco-9); } }
+.fund .assin-n { font-size: clamp(56px, 9vw, 88px); }
+.fund .cv-foto, .fund .fi { aspect-ratio: 4/5; }
+.assin-bloco { display: grid; gap: 10px; margin-bottom: var(--espaco-5); }
+
+/* Linha do tempo */
+.tempo { list-style: none; margin: 0; padding: 0; display: grid; }
+.tempo li { display: grid; grid-template-columns: 7.5em 1fr; gap: var(--espaco-4); padding-block: var(--espaco-4); border-top: 1px solid var(--linha); font-family: var(--font-display); font-size: 17px; line-height: 1.35; color: var(--tinta); }
+.tempo li:last-child { border-bottom: 1px solid var(--linha); }
+.tempo b { font-weight: 800; font-stretch: 115%; color: var(--acento); }
+
+/* Cartões de produto */
+.grade { display: grid; gap: 20px; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); }
+.p { display: grid; gap: 10px; align-content: start; padding: 28px 24px; min-height: 340px; }
+.p .nm { font-size: 32px; color: var(--tinta); }
+.p .d { font-family: var(--font-texto); font-size: 16px; line-height: 1.55; color: var(--tinta-suave); margin: 6px 0 4px; }
+.p .cv-faixa { width: 96px; }
+.mfp { background: var(--faixa-preta); border-color: var(--faixa-preta); }
+.mfp .nm { color: #f2f0ec; } .mfp .cv-sobre, .mfp .d { color: #bab5ae; } .mfp .cv-link { color: var(--kihap-ouro); }
+.vazio { border-style: dashed; border-color: var(--linha-forte); background: var(--papel); }
+
+/* Kihap */
+.kihap-bloco .cv-faixa { margin-bottom: var(--espaco-3); }
+.cv-link.ouro { color: var(--ouro-texto); }
+.cinza { background: var(--kihap-grafite); color: #f2f0ec; }
+.cinza .tres { display: grid; gap: var(--espaco-7); }
+@media (min-width: 800px) { .cinza .tres { grid-template-columns: repeat(3, 1fr); } }
+.cinza h3 { font-family: var(--font-display); font-weight: 700; font-size: 22px; margin: 16px 0 8px; }
+.cinza p { font-family: var(--font-texto); font-size: 16px; line-height: 1.55; color: #bab5ae; margin: 0 0 16px; }
+.cinza a { color: var(--kihap-ouro); font-family: var(--font-display); font-weight: 600; text-decoration: none; border-bottom: 2px solid transparent; padding-bottom: 2px; }
+.cinza a:hover { border-bottom-color: currentColor; }
+.cinza a:focus-visible { outline-color: var(--kihap-ouro); }
+
+/* Imprensa */
+.bio { display: grid; gap: var(--espaco-4); padding: var(--espaco-6); }
+.bio h3 { font-family: var(--font-display); font-weight: 800; font-stretch: 115%; font-size: 28px; line-height: 1.1; margin: 0; color: var(--acento); }
+.bio p { font-family: var(--font-texto); font-size: 17px; line-height: 1.65; color: var(--tinta); margin: 0; }
+.bio .cv-btn { justify-self: start; }
+
+/* Formulário */
+.form { display: grid; gap: 20px 24px; max-width: 760px; }
+@media (min-width: 700px) { .form { grid-template-columns: 1fr 1fr; } .form .tudo { grid-column: 1 / -1; } }
+.cv-campo textarea { min-height: 160px; resize: vertical; }
+.acoes { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
+.status { font-family: var(--font-display); font-size: 16px; font-weight: 600; margin: 0; padding: 16px 20px; border: 1px solid; }
+.status.ok { color: var(--sucesso); border-color: var(--sucesso); }
+.status.falha { color: var(--erro); border-color: var(--erro); }
+[hidden] { display: none !important; }
+
+/* Pendências aparecem marcadas na pré-visualização */
+/* [data-pendente] é lido por checar-pendencias.py; sem destaque visual no protótipo */
+
+/* Rodapé */
+.rodape { border-top: 1px solid var(--linha); }
+.rodape .in { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; padding-block: 28px; }
+.rodape .wm { font-size: 18px; }
+.rodape nav { display: flex; gap: 20px; }
+.rodape .cv-legenda a { color: inherit; }
+
+/* Provas: colunas largas o bastante para "+1.200" sem encostar no vizinho */
+.cv-provas { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+.cv-prova b { font-size: clamp(40px, 6vw, 56px); }
+
+/* Fotografia: cantos retos, sem filtro (design system) */
+.fi { margin: 0; background: var(--papel-recuo); overflow: hidden; }
+.fi img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.fi-hist { margin-top: var(--espaco-6); max-width: 360px; }
+.fi-hist .fi { aspect-ratio: 4/5; }
+.fi-apoio .fi { aspect-ratio: 3/2; max-width: 680px; }
