@@ -22,6 +22,7 @@
 .ed-section-head .ed-index { font: 700 13px var(--font-display); border-top: 2px solid currentColor; padding-top: 12px; color: var(--tinta-suave); }
 .ed-section-head .ed-eyebrow { margin: 0 0 12px; color: var(--tinta-suave); }
 .ed-section-head h2 { font-size: clamp(40px, 5.7vw, 76px); max-width: 15ch; margin: 0; }
+.ed-section-head .ed-subhead { font-family: var(--font-display); font-weight: 700; font-stretch: 110%; font-size: clamp(22px, 2.8vw, 36px); line-height: 1.25; color: var(--acento, var(--tinta)); margin: 14px 0 0; letter-spacing: -.02em; }
 .ed-section-intro { font-family: var(--font-texto); font-size: clamp(20px, 2.2vw, 27px); max-width: 32ch; line-height: 1.5 !important; color: var(--tinta-suave); }
 .ed-actions { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
 .ed-button { display: inline-flex; align-items: center; justify-content: space-between; gap: 28px; min-height: 54px; padding: 12px 18px; background: var(--tinta); border: 1px solid var(--tinta); color: var(--papel); font: 700 13px var(--font-display); text-decoration: none; transition: background .2s, color .2s, transform .2s; }
@@ -174,6 +175,8 @@
 .ed-triathlon-grid figure:nth-child(2) img { object-position: 50% 40%; }
 .ed-triathlon-grid figcaption { margin-top: 10px; font: 700 11px var(--font-display); letter-spacing: .12em; text-transform: uppercase; color: var(--tinta-suave); }
 .ed-person-timeline { background: var(--papel-recuo); }
+.ed-person-timeline .ed-section-intro { margin: 0 0 38px 74px; max-width: 58ch; }
+.ed-person-timeline .ed-timeline { margin-left: 74px; max-width: 860px; }
 .ed-two-col { display: grid; grid-template-columns: .7fr 1fr; gap: clamp(50px,8vw,110px); margin-left: 74px; }
 .ed-timeline { margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--linha-forte); }
 .ed-timeline li { display: grid; grid-template-columns: 120px 1fr; gap: 22px; padding: 21px 0; border-bottom: 1px solid var(--linha); }
@@ -252,7 +255,7 @@
   .ed-family-photo { min-height: 0; height: 480px; }
   .ed-kihap-top > p { max-width: 55ch; }
   .ed-stats { grid-template-columns: repeat(2,1fr); margin-top: 45px; }
-  .ed-offers .ed-section-intro, .ed-offers .ed-actions, .ed-person-about-grid, .ed-two-col, .ed-formations, .ed-person-talks .ed-section-intro, .ed-person-talks .ed-button, .ed-talk-history, .ed-books-grid, .ed-product-grid, .ed-triathlon .ed-section-intro, .ed-triathlon-grid { margin-left: 0; }
+  .ed-offers .ed-section-intro, .ed-offers .ed-actions, .ed-person-about-grid, .ed-two-col, .ed-person-timeline .ed-section-intro, .ed-person-timeline .ed-timeline, .ed-formations, .ed-person-talks .ed-section-intro, .ed-person-talks .ed-button, .ed-talk-history, .ed-books-grid, .ed-product-grid, .ed-triathlon .ed-section-intro, .ed-triathlon-grid { margin-left: 0; }
   .ed-product-grid, .home.ed-site .ed-product-grid { grid-template-columns: 1fr; }
   .ed-product-grid article { min-height: 0; padding: 25px; }
   .ed-triathlon-grid { grid-template-columns: 1fr 1fr; }

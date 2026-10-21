@@ -54,8 +54,9 @@ def cta(href, texto, secundaria=False):
     return f'<a class="{classe}" href="{href}">{texto}<span aria-hidden="true">↗</span></a>'
 
 
-def header_section(numero, rotulo, titulo, id_):
-    return f'<div class="ed-section-head"><span class="ed-index">{numero}</span><div><p class="ed-eyebrow">{rotulo}</p><h2 id="{id_}">{titulo}</h2></div></div>'
+def header_section(numero, rotulo, titulo, id_, subtitulo=None):
+    sub = f'<p class="ed-subhead">{subtitulo}</p>' if subtitulo else ''
+    return f'<div class="ed-section-head"><span class="ed-index">{numero}</span><div><p class="ed-eyebrow">{rotulo}</p><h2 id="{id_}">{titulo}</h2>{sub}</div></div>'
 
 
 def layout(path, titulo, descricao, corpo, escopo="", scripts="", estilos=""):
@@ -254,6 +255,7 @@ FUNDADORES = {
         "sobre": "Master Cavenatti é cofundador da Kihap, mestre de Taekwondo e formado em Administração. Durante dez anos, integrou a equipe do Brasil em torneios internacionais. Sua atuação reúne ensino, gestão e desenvolvimento de pessoas. Divide a vida com a Mrs Master e é pai de Benício e Serena. A jornada no triatlo também faz parte de sua história; família, esporte e trabalho exigem escolhas sustentadas com constância.",
         "sobre_foto": "/img/master-treino.jpg", "sobre_alt": "Master Cavenatti acompanhando uma atividade de Taekwondo com o filho",
         "traj_titulo": "Da prática marcial à formação de pessoas.",
+        "traj_sub": "4x campeão mundial, 3x IronMan",
         "traj_intro": "O percurso começou no Taekwondo, passou por uma década na equipe do Brasil em torneios internacionais e ganhou escala no ensino e na gestão da Kihap. O triatlo ampliou sua experiência com treino, resistência e constância.",
         "traj": [("1994", "Início no Taekwondo."), ("1997", "Faixa preta 1º Dan."), ("2004", "Certificação como instrutor."), ("10 anos", "Na equipe do Brasil em torneios internacionais."), ("2018", "Reconhecido Mestre nos Estados Unidos."), ("2024", "Segundo mestrado nos Estados Unidos."), ("Hoje", "Cofundador da Kihap, com atuação no ensino e na liderança.")],
         "form_titulo": "Formação que se transforma em ensino.",
@@ -270,7 +272,7 @@ def founder_page(d):
     chave = "fernanda" if d["classe"] == "ed-fer" else "master"
     livros = livros_section(chave)
     voz = '''<section class="ed-master-voice ed-section" aria-labelledby="voice-title"><div class="in"><p class="ed-eyebrow">Nas palavras do Master</p><blockquote id="voice-title">“Aprendi cedo que faixa preta não é um ponto de chegada, é o hábito de voltar ao treino todos os dias. É isso que ensino: não se trata de fazer mais, e sim de fazer com constância aquilo que você já sabe que importa.”</blockquote><p>Master Cavenatti</p></div></section>''' if chave == "master" else ""
-    triatlo = '''<section class="ed-triathlon ed-section in" aria-labelledby="triathlon-title">
+    triatlo = f'''<section class="ed-triathlon ed-section in" aria-labelledby="triathlon-title">
   {header_section('03', 'Além do tatame', 'A jornada do triatlo.', 'triathlon-title')}
   <p class="ed-section-intro">O triatlo faz parte da trajetória esportiva do Master. As imagens de treino e de prova mostram outra expressão da disciplina que ele leva ao ensino: voltar à prática e seguir até o fim.</p>
   <div class="ed-triathlon-grid">
@@ -293,8 +295,9 @@ def founder_page(d):
 </section>
 {voz}
 <section class="ed-section ed-person-timeline" id="trajetoria" aria-labelledby="traj-title"><div class="in">
-  {header_section('02', 'Trajetória', d['traj_titulo'], 'traj-title')}
-  <div class="ed-two-col"><p class="ed-section-intro">{d['traj_intro']}</p>{timeline(d['traj'])}</div>
+  {header_section('02', 'Trajetória', d['traj_titulo'], 'traj-title', d.get('traj_sub'))}
+  <p class="ed-section-intro">{d['traj_intro']}</p>
+  {timeline(d['traj'])}
 </div></section>
 {triatlo}
 <section class="ed-section ed-person-form in" id="formacoes" aria-labelledby="form-title">
