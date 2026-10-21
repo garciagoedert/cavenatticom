@@ -59,7 +59,8 @@ def header_section(numero, rotulo, titulo, id_):
 
 
 def layout(path, titulo, descricao, corpo, escopo="", scripts="", estilos=""):
-    nav = "\n".join(f'<a href="{href}"{(" aria-current=\"page\"" if href == path else "")}>{label}</a>' for href, label in NAV)
+    cur = ' aria-current="page"'
+    nav = "\n".join(f'<a href="{href}"{(cur if href == path else "")}>{label}</a>' for href, label in NAV)
     return f'''<!doctype html>
 <html lang="pt-BR">
 <head>
@@ -116,11 +117,11 @@ HOME = f'''
   <div class="ed-founder-grid">
     <article class="ed-founder ed-founder-fer">
       <div class="ed-founder-image">{imagem('/img/fernanda-medalha.jpg', 'Mrs Master Cavenatti com a filha e uma medalha de Taekwondo')}</div>
-      <div class="ed-founder-body"><p class="ed-eyebrow">Mrs Master Cavenatti</p><h3>Conhecimento para ocupar o próprio espaço.</h3><p>Dez vezes campeã mundial de Taekwondo, com formação em Educação Física, Fisiologia do Exercício e mestrado na modalidade. Como cofundadora da Kihap, une prática, estudo e empreendedorismo.</p><a class="ed-text-link" href="/fernanda/">Conheça sua trajetória ↗</a></div>
+      <div class="ed-founder-body"><p class="ed-eyebrow">Mrs Master Cavenatti</p><h3>Conhecimento para ocupar o próprio espaço.</h3><p>10x campeã mundial de Taekwondo, tem formação em Educação Física e Fisiologia do Exercício, além de mestrado na modalidade. Cofundadora da Kihap, une experiência no esporte, conhecimento acadêmico e visão empreendedora.</p><a class="ed-text-link" href="/fernanda/">Conheça sua trajetória ↗</a></div>
     </article>
     <article class="ed-founder ed-founder-mas">
       <div class="ed-founder-image">{imagem('/img/master-em-aula.jpg', 'Master Cavenatti conduzindo uma aula de Taekwondo')}</div>
-      <div class="ed-founder-body"><p class="ed-eyebrow">Master Cavenatti</p><h3>Disciplina que se torna prática.</h3><p>Desde 1994 no Taekwondo, tornou-se mestre, educador e empreendedor. Como cofundador da Kihap, aproxima ensino, gestão e desenvolvimento de pessoas.</p><a class="ed-text-link" href="/master/">Conheça sua trajetória ↗</a></div>
+      <div class="ed-founder-body"><p class="ed-eyebrow">Master Cavenatti</p><h3>Disciplina que se torna prática.</h3><p>4x campeão mundial de Taekwondo, pratica a modalidade desde 1994 e construiu sua trajetória como mestre, educador e empreendedor. Cofundador da Kihap, conecta ensino, gestão e desenvolvimento de pessoas.</p><a class="ed-text-link" href="/master/">Conheça sua trajetória ↗</a></div>
     </article>
   </div>
 </section>
