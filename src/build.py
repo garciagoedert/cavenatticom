@@ -378,7 +378,16 @@ for page in PAGES:
 
 # A prévia nunca simula um envio real. O checkout da Imersão permanece pendente.
 (OUT / "js").mkdir(exist_ok=True)
-(OUT / "js" / "config.js").write_text("window.CAVENATTI = { formEndpoint: '', prototipo: false, checkoutUrl: '' };\n", encoding="utf-8")
+(OUT / "js" / "config.js").write_text(
+    "window.CAVENATTI = {\n"
+    "  formEndpoint: '',\n"
+    "  prototipo: false,\n"
+    "  sheetUrl: 'https://script.google.com/macros/s/AKfycbwW3OEpez3uDEOmf8JTnFCY3gmnf1pU-lE8gzdONZ4mgY9aErepgbz-Y5ar2LxCyNpeRA/exec',\n"
+    "  checkoutIndividual: 'https://mpago.li/1Rs26z1',\n"
+    "  checkoutDupla: 'https://mpago.li/1LnY6BS'\n"
+    "};\n",
+    encoding="utf-8"
+)
 # A página de podcast sem conteúdo aprovado deixa de ser gerada.
 podcast = OUT / "kihapcast" / "index.html"
 if podcast.exists():
