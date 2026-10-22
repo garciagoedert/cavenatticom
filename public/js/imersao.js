@@ -23,7 +23,7 @@
     }
 
     var cfg = window.CAVENATTI || {};
-    var sheetUrl = cfg.sheetUrl || 'https://script.google.com/macros/s/AKfycbwW3OEpez3uDEOmf8JTnFCY3gmnf1pU-lE8gzdONZ4mgY9aErepgbz-Y5ar2LxCyNpeRA/exec';
+    var sheetUrl = cfg.sheetUrl || 'https://script.google.com/macros/s/AKfycby4eLwOEmWBFy-3IvZpaCOeqI6uyniPZ1MVYwMp-6RXjOVMYwl-1FtHz9NMJDj2H6DL_A/exec';
     var checkout = (f.ingresso.value === 'dupla')
       ? (cfg.checkoutDupla || 'https://mpago.li/1LnY6BS')
       : (cfg.checkoutIndividual || 'https://mpago.li/1Rs26z1');
