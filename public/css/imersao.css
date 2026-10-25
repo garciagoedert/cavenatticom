@@ -97,10 +97,8 @@
 .im-dia p{min-width:0}
 .im-nota-dia{margin-top:20px;font-size:.9375rem;color:var(--im-rotulo)}
 
-/* leva */
-.im-leva .im-in{display:grid;gap:40px}
-@media (min-width:900px){.im-leva .im-in{grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:64px;align-items:center}}
-.im-leva ul{list-style:none;margin:0;padding:0;display:grid;gap:14px}
+.im-leva .im-in{max-width:820px;margin:0 auto;display:flex;flex-direction:column;gap:32px}
+.im-leva ul{list-style:none;margin:0;padding:0;display:grid;gap:16px}
 .im-leva li{display:grid;grid-template-columns:28px 1fr;gap:12px;align-items:start}
 .im-leva li svg{width:22px;height:22px;stroke:var(--im-ouro-texto);fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;margin-top:2px}
 .im-leva li b{font-family:var(--im-f-marca);font-weight:800;color:var(--im-titulo)}
