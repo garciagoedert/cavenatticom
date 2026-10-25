@@ -172,6 +172,23 @@ HOME = f'''
 </section>
 
 <section class="ed-close ed-section in"><p class="ed-eyebrow">Seu evento, sua equipe, seu projeto</p><h2>Vamos conversar sobre o que faz sentido para o seu público.</h2>{cta('/contato/', 'Fale com a equipe')}</section>
+<aside class="ed-floating-cta" id="floating-imersao" aria-label="Destaque da Imersão" aria-hidden="true">
+  <div class="ed-floating-inner">
+    <button class="ed-floating-close" id="close-floating-cta" type="button" aria-label="Fechar aviso">×</button>
+    <div class="ed-floating-tag">
+      <span class="ed-floating-pulse" aria-hidden="true"></span>
+      <span>14 NOV · BRASÍLIA</span>
+    </div>
+    <div class="ed-floating-body">
+      <h3 class="ed-floating-title">Imersão Faixa Preta</h3>
+      <p class="ed-floating-desc">Do tatame para a vida com Master Cavenatti.</p>
+    </div>
+    <a class="ed-floating-btn" href="/imersao/#inscricao">
+      <span>Garantir vaga</span>
+      <span aria-hidden="true">↗</span>
+    </a>
+  </div>
+</aside>
 '''
 
 

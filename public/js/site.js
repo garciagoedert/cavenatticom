@@ -21,6 +21,43 @@
     });
   }
 
+  // Card flutuante da Imersão (Home)
+  var floating = document.getElementById('floating-imersao');
+  if (floating) {
+    var closeBtn = document.getElementById('close-floating-cta');
+    var isDismissed = false;
+    try {
+      isDismissed = sessionStorage.getItem('cavenatti_dismiss_floating') === '1';
+    } catch (e) {}
+
+    if (!isDismissed) {
+      var checkScroll = function () {
+        var scrollY = window.pageYOffset || document.documentElement.scrollTop;
+        if (scrollY > 280) {
+          floating.classList.add('is-visible');
+          floating.setAttribute('aria-hidden', 'false');
+        } else {
+          floating.classList.remove('is-visible');
+          floating.setAttribute('aria-hidden', 'true');
+        }
+      };
+
+      window.addEventListener('scroll', checkScroll, { passive: true });
+      checkScroll();
+
+      if (closeBtn) {
+        closeBtn.addEventListener('click', function (e) {
+          e.preventDefault();
+          floating.classList.remove('is-visible');
+          floating.setAttribute('aria-hidden', 'true');
+          try {
+            sessionStorage.setItem('cavenatti_dismiss_floating', '1');
+          } catch (err) {}
+        });
+      }
+    }
+  }
+
   var form = document.getElementById('form-contato');
   if (!form) return;
   var assunto = new URLSearchParams(location.search).get('assunto');
