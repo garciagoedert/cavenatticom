@@ -177,7 +177,7 @@ HOME = f'''
     <button class="ed-floating-close" id="close-floating-cta" type="button" aria-label="Fechar aviso">×</button>
     <div class="ed-floating-tag">14 NOV · BRASÍLIA</div>
     <div class="ed-floating-body">
-      <h3 class="ed-floating-title">Imersão Faixa Preta</h3>
+      <h3 class="ed-floating-title">Imersão Mente Faixa Preta</h3>
       <p class="ed-floating-desc">Do tatame para a vida com Master Cavenatti.</p>
     </div>
     <a class="ed-floating-btn" href="/imersao/#inscricao">
